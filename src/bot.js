@@ -66,15 +66,10 @@ if (clientID && clientSecret) {
         ],
         nodes: [
             {
-                host: process.env.LAVALINK_HOST || "lava.link",
-                port: parseInt(process.env.LAVALINK_PORT) || 80,
-                password: process.env.LAVALINK_PASSWORD || "CorwinDev",
-                secure: Boolean(process.env.LAVALINK_SECURE) || false
-            },
-            {
-                host: "lavalink.techpoint.world",
-                port: 80,
-                password: "techpoint"
+                host: process.env.LAVALINK_HOST,
+                port: parseInt(process.env.LAVALINK_PORT),
+                password: process.env.LAVALINK_PASSWORD,
+                secure: Boolean(process.env.LAVALINK_SECURE)
             },
         ],
         send(id, payload) {

@@ -16,14 +16,21 @@ module.exports = {
                 .setName('create')
                 .setDescription('Make an announcement')
                 .addChannelOption(option => option.setName('channel').setDescription('Select a channel').setRequired(true).addChannelTypes(ChannelType.GuildText).addChannelTypes(ChannelType.GuildNews))
-                .addStringOption(option => option.setName('message').setDescription('Your announcement message').setRequired(true)),
+                .addStringOption(option => option.setName('message').setDescription('Your announcement message').setRequired(true))
+                .addStringOption(option => option.setName('title').setDescription('Your announcement title').setRequired(false))
+                .addStringOption(option => option.setName('color').setDescription('Your announcement color').setRequired(false))
+                .addStringOption(option => option.setName('footer').setDescription('Your announcement footer').setRequired(false)),
+                
         )
         .addSubcommand(subcommand =>
             subcommand
                 .setName('edit')
                 .setDescription('Edit an announcement')
                 .addStringOption(option => option.setName('id').setDescription('ID of the announcement you want to change').setRequired(true))
-                .addStringOption(option => option.setName('message').setDescription('Your announcement message').setRequired(true)),
+                .addStringOption(option => option.setName('message').setDescription('Your announcement message').setRequired(true))
+                .addStringOption(option => option.setName('title').setDescription('Your announcement title').setRequired(false))
+                .addStringOption(option => option.setName('color').setDescription('Your announcement color').setRequired(false))
+                .addStringOption(option => option.setName('footer').setDescription('Your announcement footer').setRequired(false)),
         )
     ,
 
